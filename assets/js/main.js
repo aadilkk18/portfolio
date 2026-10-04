@@ -32,6 +32,12 @@
       var open = links.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !menuBtn.contains(e.target)) {
+        links.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && links.classList.contains('open')) {
         links.classList.remove('open');
