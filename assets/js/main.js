@@ -6,7 +6,7 @@
 
   /* ---------- SETTINGS ---------- */
   // GoatCounter site code, e.g. 'aadilkk18' (gives aadilkk18.goatcounter.com). Leave '' until you have signed up.
-  var GOATCOUNTER_CODE = '';
+  var GOATCOUNTER_CODE = 'aadilkk18';
 
   /* ---------- Theme ---------- */
   // Remember the visitor's theme choice (safe if storage is blocked).
