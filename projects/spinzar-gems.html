@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spinzar Gems Co. | Aadil Kamal Khan</title>
+<meta name="description" content="Spinzar Gems Co. is a live showcase and inquiry site for a Bangkok gemstone dealer. Aadil Kamal Khan built all of it: database, API, admin dashboard, public site and deployment.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="Spinzar Gems Co. | Aadil Kamal Khan">
+<meta property="og:description" content="A live gemstone showcase and inquiry platform, built end to end by one developer: typo-tolerant search, four-currency prices and an admin dashboard.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / Spinzar Gems Co.</p>
+      <div class="cs-head">
+        <span class="logo-tile light"><img src="../assets/img/projects/spinzar-gems.svg" alt="Spinzar Gems logo"></span>
+        <h1>Spinzar Gems Co.</h1>
+        <span class="pill live"><i aria-hidden="true"></i>Live</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">Luxury gemstone showcase &amp; inquiry platform</p>
+      <p class="lede cs-lede">A Bangkok gemstone dealer needed a website as good as the stones. I built all of it: the database, the API, the admin dashboard, the public site and the deployment.</p>
+      <div class="proj-links">
+        <a class="btn primary sm" href="https://spinzargems.com" target="_blank" rel="noopener">Visit the live site ↗</a>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div><b>Role</b><span>Sole developer, design to deployment</span></div>
+      <div><b>Status</b><span>Live</span></div>
+      <div><b>Stack</b><span>Next.js, React, TypeScript, Tailwind, FastAPI, PostgreSQL</span></div>
+      <div><b>Hosting</b><span>Railway, Cloudflare</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <h2 style="margin-top:0">The brief</h2>
+        <p>The dealer wanted a site that looks as good as the stones. Not a shop with a cart. Gems like these get sold through a conversation, so the site has two jobs: show the stone properly, and make it easy to ask about it.</p>
+        <p>That's the whole brief, and it shaped every decision below.</p>
+
+        <h2>The key decision: inquiry, not checkout</h2>
+        <p>There are no customer accounts and no payments on this site. That's on purpose. A visitor browses, finds a stone, then either sends an inquiry or taps WhatsApp to start a chat.</p>
+        <div class="callout"><b>Why</b><p>This is a product decision, not a missing feature. A checkout would have meant accounts, payment handling and a lot more to break, for a sale that happens in conversation anyway.</p></div>
+
+        <h2>How it works, with plain examples</h2>
+
+        <h3>Search that forgives typos</h3>
+        <p>People misspell gemstone names all the time. The search is built so a wrong spelling still finds the stone.</p>
+        <div class="example">
+          <header>Example: typos in the search box</header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>You type</th><th>You still find</th></tr></thead>
+            <tbody>
+              <tr><td>saphire</td><td>Sapphire</td></tr>
+              <tr><td>rubyy</td><td>Ruby</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <p><strong>The bug that taught me how it works.</strong> My first version measured similarity against the whole string, so a typo got compared with an entire stone name. The long name diluted the score, and good matches ranked too low. Switching to word-level similarity, where each word is compared on its own, fixed it.</p>
+
+        <h3>Prices in four currencies</h3>
+        <p>Every price shows in <strong>USD, THB, EUR and GBP</strong>. Exchange rates refresh daily. If the rate service is down, a fallback keeps prices on screen instead of leaving the page broken.</p>
+
+        <h3>Data that can't be quietly damaged</h3>
+        <p>An inventory system fails in boring ways: someone deletes the wrong stone, or two people overwrite each other. So the rules are enforced, not hoped for.</p>
+        <ul>
+          <li><strong>No hard deletes.</strong> A stone is retired, never erased.</li>
+          <li><strong>Valid status flow only.</strong> A stone can only move between statuses in an allowed order.</li>
+          <li><strong>Stale edits are rejected.</strong> If two staff members open the same stone and both save, the second save is refused instead of silently overwriting the first.</li>
+          <li><strong>Append-only history.</strong> Every change is logged, and the log only grows.</li>
+        </ul>
+
+        <h3>An admin dashboard with roles</h3>
+        <p>Staff manage inventory, inquiries and other staff from one dashboard. What each person can do depends on their role.</p>
+
+        <h3>Images and gem certificates</h3>
+        <p>Each stone has photos and a PDF certificate. Uploads are validated on the server, not just in the browser, and then stored in cloud storage.</p>
+
+        <h3>Privacy built in</h3>
+        <p>Customer details can be anonymised on request, GDPR/PDPA-style.</p>
+
+        <h3>The details</h3>
+        <p>Custom 404 pages, optimised images, a sitemap and robots file for search engines, and 20 routes in total.</p>
+
+        <h2>Bugs I'm glad I hit</h2>
+
+        <h3>Route ordering</h3>
+        <p>The API matches routes in the order they're declared. Put a general route above a specific one and it swallows the requests meant for the specific one. Reordering fixed it, and the order is something I check now.</p>
+
+        <h3>A DELETE that failed only in the browser</h3>
+        <p>It passed every direct API test and still failed on the real page. The cause was CORS: browsers enforce it and testing tools don't. Lesson: test in the browser, not just against the API.</p>
+
+        <h3>A collapsed layout</h3>
+        <p>A section of the page collapsed because of how an image was sized. Sizing the image properly fixed it.</p>
+
+        <h2>Decisions I made</h2>
+        <ul>
+          <li><strong>Inquiry only.</strong> The site starts conversations. It doesn't try to close sales.</li>
+          <li><strong>No payment processing.</strong> Less to build, less to break.</li>
+          <li><strong>One platform for everything.</strong> The public site, the admin dashboard and the API are one build.</li>
+          <li><strong>Skipped what wasn't needed.</strong> I left out features that didn't earn their place.</li>
+        </ul>
+
+        <h2>Where it stands</h2>
+        <p>Live at <a href="https://spinzargems.com" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">spinzargems.com</a>.</p>
+
+        <div class="proj-links" style="margin-top:36px">
+          <a class="btn primary" href="https://spinzargems.com" target="_blank" rel="noopener">Visit the live site ↗</a>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="kairos.html">← Kairos</a>
+        <a href="leo.html">Next: LEO →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

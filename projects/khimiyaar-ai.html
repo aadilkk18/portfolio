@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KhimiYaar AI | Aadil Kamal Khan</title>
+<meta name="description" content="KhimiYaar AI is a health information assistant that helps people describe symptoms, understand lab results and get a rough fracture screening. It informs and never diagnoses.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="KhimiYaar AI | Aadil Kamal Khan">
+<meta property="og:description" content="A health information chatbot with a lab report analyzer, emergency detection with Pakistan-specific contacts, and a fine-tuned X-ray fracture model at 96.2% test accuracy.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / KhimiYaar AI</p>
+      <div class="cs-head">
+        <span class="logo-tile light"><img src="../assets/img/projects/khimiyaar-ai.png" alt="KhimiYaar AI logo"></span>
+        <h1>KhimiYaar AI</h1>
+        <span class="pill done"><i aria-hidden="true">✓</i>v1 complete</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">Health information chatbot</p>
+      <p class="lede cs-lede">A health information assistant that helps you describe your symptoms, understand your lab results and get a rough fracture screening, all in one conversation. It informs. It never diagnoses.</p>
+      <div class="proj-links">
+        <a class="btn primary sm" href="https://lnkd.in/p/duH7NrVa" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+        <a class="btn sm" href="https://github.com/aadilkk18/khimiyaar-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div><b>Role</b><span>Sole developer: app, backend and model training</span></div>
+      <div><b>Status</b><span>v1 complete. Tested locally, ready to deploy, not hosted yet.</span></div>
+      <div><b>Stack</b><span>React (Vite), FastAPI, Groq API, TensorFlow / Keras</span></div>
+      <div><b>Languages</b><span>English and Roman Urdu</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <h2 style="margin-top:0">The name</h2>
+        <p><strong>Khimiyaar</strong> is a Khowar word for something that does you good, the way carrots are said to be khimiyaar for your eyes. That is the job of this app.</p>
+
+        <h2>The problem, and the one rule</h2>
+        <p>People walk into a doctor's office with vague symptoms and a lab sheet they can't read. KhimiYaar helps them arrive prepared. It was built with Pakistan in mind, including emergency numbers for the regions, Chitral among them.</p>
+        <div class="callout"><b>Information, not diagnosis</b><p>This is an educational tool. It does not diagnose, prescribe or replace a doctor, and every result is meant to be reviewed by a professional. In an emergency, call emergency services.</p></div>
+
+        <h2>How it works, with plain examples</h2>
+
+        <h3>The assistant</h3>
+        <p>It tells a personal symptom ("I have a headache") from a general question ("what is a migraine"), and it doesn't force an interview onto the second kind. For the first kind it collects the main symptom, how long it has lasted, your age and your gender. If you skip one, it goes back to it. Then it writes a summary you can hand to a doctor. It picks up English or Roman Urdu from your first message and stays in that language.</p>
+
+        <h3>The lab analyzer</h3>
+        <p>Upload a photo of a report: blood count, lipids, blood sugar, liver, kidney or thyroid. A vision model reads each test name, value and unit. The values are then checked against reference ranges, and where the medical evidence supports it, the ranges depend on age and sex.</p>
+        <div class="example">
+          <header>Example: one value, two ranges</header>
+          <p>A hemoglobin reading is flagged low, normal or high against the range for your sex, not a generic one. If you enter your age and gender later, or just mention them in the chat, the flags update on their own. You never type them twice.</p>
+        </div>
+        <p>The flagged results flow into the same conversation. So the final summary can say that tiredness and a low hemoglobin reading may be related, phrased as a possibility and never as a diagnosis. Symptoms and lab results are read as one picture, not two separate tools.</p>
+
+        <h2>Emergency detection</h2>
+        <p>Two layers run on every message:</p>
+        <ul>
+          <li><strong>A fast keyword check</strong> that tolerates typos. It looks for body-part and symptom combinations such as chest pain, breathing difficulty or stroke signs.</li>
+          <li><strong>A second check that reads the recent conversation,</strong> because people often reveal an emergency gradually, over several messages.</li>
+        </ul>
+        <div class="example">
+          <header>Example: asking for a number</header>
+          <p>Ask for "emergency number for Chitral" and you get the national numbers and the regional ones, with no duplicates. The chat is never locked after an alert, so you can keep asking.</p>
+        </div>
+
+        <h2>The X-ray model</h2>
+        <p>This is a separate model that I trained, not an API call. It is EfficientNetB0, pretrained and then fine-tuned on about 9,000 labelled X-ray images, and it runs on the server's own CPU. I chose the saved checkpoint by recall, because a missed fracture is worse than a false alarm.</p>
+        <div class="example">
+          <header>Results on 500 test images the model never saw</header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Measure</th><th>Frozen base</th><th>Fine-tuned (final)</th></tr></thead>
+            <tbody>
+              <tr><td>Accuracy</td><td class="num">94.6%</td><td class="num win">96.2%</td></tr>
+              <tr><td>Missed fractures</td><td class="num">15 of 238</td><td class="num win">7 of 238</td></tr>
+              <tr><td>False alarms</td><td class="num">12 of 262</td><td class="num">12 of 262</td></tr>
+            </tbody>
+          </table></div>
+          <p style="margin-top:12px;color:var(--muted)">Fine-tuning cut missed fractures by more than half without adding a single false alarm.</p>
+        </div>
+
+        <h2>Design decisions</h2>
+        <h3>A "no fracture" result is worded carefully</h3>
+        <p>The server writes that sentence, not the frontend. It says the tool can still miss fractures and that you should see a doctor if you have symptoms. A negative result should never read as a clean bill of health.</p>
+        <h3>A pre-check for images that aren't X-rays</h3>
+        <p>A simple rule (close to grayscale, with a dark background) stops the model from confidently judging a photo or a document. It is a coarse heuristic, not a trained detector, and I say so in the code.</p>
+        <h3>I didn't ship the heatmap</h3>
+        <p>I built a Grad-CAM heatmap to show where the fracture is. The highlights were vague and often in the wrong place. A confident-looking but wrong pointer is worse than no pointer in a health tool, so I removed it. Real localization needs a different kind of model.</p>
+        <h3>Emergency numbers are stored once</h3>
+        <p>National numbers live in one place and are shown next to any regional lookup, never copied into each region.</p>
+
+        <h2>Where it stands</h2>
+        <p>The MVP is built and tested end to end, locally and inside its Docker container. It is ready to deploy and not hosted yet.</p>
+        <div class="status-board">
+          <div class="ok">Health assistant<span>built</span></div>
+          <div class="ok">Lab analyzer<span>built</span></div>
+          <div class="ok">X-ray screening<span>built</span></div>
+          <div class="ok">Emergency detection<span>built</span></div>
+          <div class="ok">Docker container<span>tested</span></div>
+          <div class="no">Hosted deployment<span>not yet</span></div>
+          <div class="no">PDF lab reports<span>not yet</span></div>
+          <div class="no">Fracture location<span>not yet</span></div>
+          <div class="no">Saved history<span>not yet</span></div>
+        </div>
+        <h3>What's next</h3>
+        <p>Pointing to the fracture needs an object-detection model trained on annotated images, so that is a project of its own. After that: PDF lab reports, a hosted version, and saved history across sessions.</p>
+
+        <div class="proj-links" style="margin-top:36px">
+          <a class="btn primary" href="https://lnkd.in/p/duH7NrVa" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+          <a class="btn" href="https://github.com/aadilkk18/khimiyaar-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="leo.html">← LEO</a>
+        <a href="hirelens.html">Next: HireLens →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kairos | Aadil Kamal Khan</title>
+<meta name="description" content="Kairos is a decision-intelligence platform that separates what you know from what you assume, then runs the measurable part of a decision through a quantitative engine instead of asking an LLM to guess.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="Kairos | Aadil Kamal Khan">
+<meta property="og:description" content="An AI decision-intelligence platform where a real quantitative engine does the reasoning and the LLM only explains.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / Kairos</p>
+      <div class="cs-head">
+        <span class="logo-tile light"><img src="../assets/img/projects/kairos.svg" alt="Kairos logo"></span>
+        <h1>Kairos</h1>
+        <span class="pill dev"><i aria-hidden="true"></i>In development</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">AI decision-intelligence platform</p>
+      <p class="lede cs-lede">Most of us make big decisions with scattered information and no real structure. Kairos separates what you actually know from what you're only assuming, does the maths properly, and never pretends to be more certain than it is.</p>
+      <div class="proj-links">
+        <a class="btn primary sm" href="https://lnkd.in/p/dYfFFiMv" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div><b>Role</b><span>Sole developer: design, backend and frontend</span></div>
+      <div><b>Status</b><span>Engine A working and improving. Engine B not started.</span></div>
+      <div><b>Stack</b><span>Python, FastAPI, SQLAlchemy, SQLite, React, TypeScript, Vite, Tailwind</span></div>
+      <div><b>AI &amp; data</b><span>Groq API for language, Tavily for web research</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <h2 style="margin-top:0">The name</h2>
+        <p>Ancient Greek had two words for time. <strong>Chronos</strong> is the kind you measure: seconds, hours, deadlines. <strong>Kairos</strong> is the right moment: the window when conditions are actually right to act. Kairos, the product, is a bet on the second one.</p>
+
+        <h2>The problem</h2>
+        <p>Career switches, big purchases, life calls. People make them with half the facts in their head and no structure, so they either overthink or guess.</p>
+        <p>The obvious fix is to ask an AI. But if you ask an LLM <em>"which job offer is better?"</em>, you get a smooth, confident answer with no calculation behind it. It can't show its working, it can't tell you how fragile the answer is, and it may well have made up the numbers.</p>
+        <div class="callout"><b>The one rule</b><p>The LLM narrates. It never calculates. Every number in a Kairos report is computed by a deterministic engine, and the LLM only explains what the engine found.</p></div>
+
+        <h2>How it works, with a real example</h2>
+        <p>Take a decision most people face: <strong>two job offers</strong>. Here is what Kairos does with it, step by step. The numbers below are made up to show the mechanics, but the method is exactly what the engine runs.</p>
+
+        <ol class="steps">
+          <li><b>You describe the decision in plain language.</b>You type "comparing two job offers". You don't build a model or fill in a template.</li>
+          <li><b>Kairos builds the model for you.</b>It creates a domain and works out the objectives that matter: compensation, commute, growth, flexibility, culture.</li>
+          <li><b>Each objective is grounded, or honestly rated.</b>If an objective can be tied to real data, Kairos finds it. If it can't, it falls back to a scale you rate yourself.</li>
+          <li><b>You review the model.</b>You adjust the objectives, set how much each one matters, add constraints and confirm the data. Nothing runs on assumptions you haven't seen.</li>
+          <li><b>Engine A analyses it.</b>Four methods run on the same model: scoring, simulation, sensitivity analysis and a check on how stable your priorities are.</li>
+          <li><b>The report explains it.</b>The LLM turns the engine's results into plain language, and every figure it quotes is checked against what was computed.</li>
+        </ol>
+
+        <h3>Step 2 and 3: objectives, and what each one needs</h3>
+        <p>Salary has a currency value. Commute has a time. But "culture" has no universal number, and I refuse to let Kairos invent one just because it's convenient. So each objective is handled according to what it really is:</p>
+        <div class="example">
+          <header>Example: the objectives for two job offers</header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Objective</th><th>Kind</th><th>How Kairos grounds it</th></tr></thead>
+            <tbody>
+              <tr><td>Salary</td><td>Measurable, in money</td><td>A real figure from the offer. Quoted numbers get a small margin of uncertainty.</td></tr>
+              <tr><td>Commute</td><td>Measurable, in minutes</td><td>A real estimate. Estimates get a larger margin, because traffic changes.</td></tr>
+              <tr><td>Growth</td><td>No true number</td><td>A 1 to 10 scale that you rate yourself.</td></tr>
+              <tr><td>Flexibility</td><td>No true number</td><td>A 1 to 10 scale that you rate yourself.</td></tr>
+              <tr><td>Culture</td><td>No true number</td><td>A 1 to 10 scale that you rate yourself, and Kairos says plainly that it's a judgement.</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <h3>Step 5a: scoring the options (MCDA)</h3>
+        <p>To compare a salary with a commute, everything has to be put on the same 0 to 1 scale. Kairos does that using <strong>fixed reference points</strong>: a worst case and a best case for each objective, decided before the options are scored. Here, salary runs from 100 (worst) to 300 (best), and commute from 90 minutes (worst) to 0 (best).</p>
+        <div class="example">
+          <header>Example: Offer A (startup) vs Offer B (bank)</header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Objective</th><th>Weight</th><th>Offer A</th><th>Offer B</th></tr></thead>
+            <tbody>
+              <tr><td>Salary</td><td class="num">30%</td><td class="num">170 → 0.35</td><td class="num">150 → 0.25</td></tr>
+              <tr><td>Commute</td><td class="num">15%</td><td class="num">60 min → 0.33</td><td class="num">20 min → 0.78</td></tr>
+              <tr><td>Growth</td><td class="num">25%</td><td class="num">8/10 → 0.78</td><td class="num">5/10 → 0.44</td></tr>
+              <tr><td>Flexibility</td><td class="num">15%</td><td class="num">6/10 → 0.56</td><td class="num">4/10 → 0.33</td></tr>
+              <tr><td>Culture</td><td class="num">15%</td><td class="num">5/10 → 0.44</td><td class="num">8/10 → 0.78</td></tr>
+              <tr><td>Weighted total</td><td></td><td class="num win">0.50</td><td class="num">0.47</td></tr>
+            </tbody>
+          </table></div>
+          <p style="margin-top:12px;color:var(--muted)">Each score is (value − worst) ÷ (best − worst). Multiply by the weight, add them up, and Offer A leads, but only by 0.03. That's close, and Kairos knows it.</p>
+        </div>
+        <p><strong>Why fixed reference points?</strong> Many scoring methods rescale against the best and worst options in the current list. Add a third option and the scale shifts, so A and B can swap places even though nothing about A or B changed. That's called rank reversal. With fixed reference points, adding or removing an option never changes how the others compare. I chose this over TOPSIS and AHP after reading the literature on both.</p>
+
+        <h3>Step 5b: Monte Carlo simulation</h3>
+        <p>Real numbers aren't exact. A salary offer might shift a little. A commute changes every day. So instead of testing one fixed set of values, Kairos runs the comparison thousands of times, nudging the uncertain values by a realistic margin each time (about 5% for a quoted salary, about 15% for a commute estimate).</p>
+        <div class="example">
+          <header>Example result</header>
+          <p>Across 10,000 runs, Offer A came out ahead in about <strong>91%</strong>. So A is the likely winner, but not a certainty, and the report says exactly that instead of declaring a flat winner.</p>
+        </div>
+        <p>There's a trap here that I fixed. If a domain has no volatility set, the simulation quietly does nothing and every run is identical, which looks like stability but is really a missing input. Kairos detects that case and tells the report not to present it as evidence.</p>
+
+        <h3>Step 5c: sensitivity analysis</h3>
+        <p>Next question: <strong>what would change the answer?</strong> Kairos moves each importance weight up and down and finds the point where the winner flips.</p>
+        <div class="example">
+          <header>Example result</header>
+          <p>Offer A wins as long as commute stays below about <strong>21%</strong> of your priorities. You gave it 15%. If commute matters more to you than that, Offer B takes over. The same happens if culture goes above about <strong>23%</strong>. So this decision rests on how much you care about commute and culture, and that's far more useful to know than "A wins".</p>
+        </div>
+
+        <h3>Step 5d: stability of your priorities (SMAA-O)</h3>
+        <p>People are rarely sure of exact percentages. They know "salary matters most, then growth". SMAA-O handles that. It keeps your <em>order</em> of importance but tries thousands of different weight combinations that fit that order, and counts how often each option wins.</p>
+        <div class="example">
+          <header>Example result</header>
+          <p>Keeping salary first and growth second, Offer A wins under about <strong>94%</strong> of reasonable weightings. Strong, but not total.</p>
+        </div>
+        <p>If this check disagrees with the main score (say, the main score picks A but most weightings pick B), the report is not allowed to give a confident recommendation and has to name both options. I added that rule after a live test showed the report recommending a winner that the stability check didn't support.</p>
+
+        <h3>Step 6: the report</h3>
+        <p>All of the above goes into a plain-language report. The LLM writes it, but it's boxed in:</p>
+        <ul>
+          <li>Every figure it quotes is checked against the computed results. Anything that isn't found is flagged instead of shown.</li>
+          <li>It can't call a close result a clear win.</li>
+          <li>It has to say what could change the outcome, using the real percentages from the analysis.</li>
+        </ul>
+        <div class="example">
+          <header>Example: how the example would read</header>
+          <p><em>"Offer A comes out slightly ahead, and it wins in about 91% of simulated outcomes. But this is close. If commute matters more to you than roughly 21% of your decision, Offer B is the better choice. The biggest unknowns are your own ratings for culture and growth, so those are worth a second look before you decide."</em></p>
+        </div>
+
+        <h2>Design decisions</h2>
+        <h3>Never invent a number</h3>
+        <p>If something has no real measure, Kairos says so and asks you to rate it. A made-up figure would make the whole answer look more precise than it is, which is the exact failure Kairos exists to avoid.</p>
+        <h3>One engine for every domain</h3>
+        <p>I didn't want a car calculator and a job calculator. Engine A has no domain-specific logic. A domain is a thin configuration that lists objectives and units. I tested it on two unrelated decisions, buying a car and comparing job offers, and the same engine handled both.</p>
+        <h3>Honest about uncertainty</h3>
+        <p>Close results are called close. Missing data is called missing. The report is built to inform a decision, not to pretend the decision has already been made.</p>
+        <h3>Decide in steps, and keep a record</h3>
+        <p>Every analysis is saved as a snapshot, so you can come back to a decision, see what the numbers said at the time, and pick up where you left off.</p>
+
+        <h2>Where it stands</h2>
+        <div class="status-board">
+          <div class="ok">Engine A<span>built, tested</span></div>
+          <div class="ok">Decision modelling<span>working</span></div>
+          <div class="ok">Memory<span>built</span></div>
+          <div class="ok">Reports<span>built</span></div>
+          <div class="wip">Web research<span>integrating</span></div>
+          <div class="wip">Backend<span>in development</span></div>
+          <div class="wip">Frontend<span>underway</span></div>
+          <div class="no">Engine B<span>not started</span></div>
+        </div>
+        <h3>What's next</h3>
+        <p><strong>Web research.</strong> You shouldn't have to type in every data point. Ask about iPhone 17 Pro vs Galaxy S26 Ultra vs Pixel 10 Pro and Kairos should research the specs itself. But it can't trust online numbers blindly. Each value has to stay tied to its objective and be reviewable before it is used. That raises a harder question: how does Kairos decide whether something is even measurable? Finding a number isn't the same as finding the right one.</p>
+        <p><strong>Engine B.</strong> Engine A handles what numbers can model. Engine B is for the decisions a spreadsheet can't hold: career direction, relationships, values. It will use real frameworks instead of vibes, and it will be honest that some things can only be informed, never predicted. It isn't started, and I won't pretend otherwise.</p>
+
+        <div class="proj-links" style="margin-top:36px">
+          <a class="btn primary" href="https://lnkd.in/p/dYfFFiMv" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="index.html">← All projects</a>
+        <a href="spinzar-gems.html">Next: Spinzar Gems Co. →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

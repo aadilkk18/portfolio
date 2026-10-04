@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="146 145 961 961">
+
+  <!-- Red ribbon (left) -->
+  <path fill="#A6192E" d="M 503,185 L 182,824 L 489,1066 L 530,992 L 504,957 L 472,991 L 244,806 L 499,297 L 544,373 L 532,401 L 559,448 L 598,377 Z"/>
+
+  <!-- Blue ribbon (center) -->
+  <path fill="#0F52BA" d="M 627,394 L 499,635 L 586,776 L 506,931 L 536,974 L 645,776 L 557,634 L 625,502 L 731,698 L 568,997 L 595,1045 L 788,696 Z"/>
+
+  <!-- Green ribbon (right) -->
+  <path fill="#079864" d="M 751,185 L 656,375 L 694,444 L 721,395 L 710,369 L 755,296 L 1011,807 L 783,992 L 751,955 L 724,991 L 765,1065 L 1072,824 Z"/>
+
+</svg>

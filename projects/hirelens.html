@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HireLens | Aadil Kamal Khan</title>
+<meta name="description" content="HireLens is a live CV rating tool built around how Pakistani recruiters screen: hybrid OCR for scanned CVs, semantic matching across 115+ roles, and a deterministic weighted score.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="HireLens | Aadil Kamal Khan">
+<meta property="og:description" content="An AI CV rating platform tuned to Pakistani hiring norms. The model rates six categories and code computes the overall score, so the number stays consistent.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / HireLens</p>
+      <div class="cs-head">
+        <span class="logo-tile light"><img src="../assets/img/projects/hirelens.png" alt="HireLens logo"></span>
+        <h1>HireLens</h1>
+        <span class="pill live"><i aria-hidden="true"></i>Live</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">AI-powered CV rating platform</p>
+      <p class="lede cs-lede">A CV rating tool built around how Pakistani recruiters actually screen, not how a Western résumé tool assumes they do.</p>
+      <div class="proj-links">
+        <a class="btn primary sm" href="https://hire-lens-lime.vercel.app" target="_blank" rel="noopener">Visit the live site ↗</a>
+        <a class="btn sm" href="https://github.com/aadilkk18/HireLens" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div><b>Role</b><span>Sole developer: frontend, backend and deployment</span></div>
+      <div><b>Status</b><span>Live, on free hosting</span></div>
+      <div><b>Stack</b><span>React (Vite), FastAPI, Gemini API, sentence-transformers, Tesseract OCR</span></div>
+      <div><b>Hosting</b><span>Vercel and Hugging Face Spaces, free tiers</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <div class="callout" style="margin-top:0"><b>Before you try it</b><p>The backend runs on a free Hugging Face tier, which puts it to sleep after about 48 hours. If it's asleep when you visit, <a href="../contact.html" style="color:var(--accent);font-weight:600">message me</a> and I'll wake it up.</p></div>
+
+        <h2>The problem</h2>
+        <p>I built this from my own job search. Generic CV scorers weigh things a Pakistani recruiter doesn't, and miss what they do: university tier, whether you list a CGPA, mixed English and Urdu content, and the fast triage that platforms like Rozee.pk force. So I built a rater that reads a CV the way a local recruiter would.</p>
+
+        <h2>How it works, with a worked example</h2>
+        <ol class="steps">
+          <li><b>Upload a CV.</b>PDF, PNG or JPG.</li>
+          <li><b>It reads the file.</b>Text PDFs are read directly. If a PDF yields fewer than 30 characters, it's treated as a scan and run through OCR. Photos go straight to OCR, after a grayscale and contrast cleanup.</li>
+          <li><b>Pick the role.</b>Choose from 115+ roles, or type it freely, like "someone who builds mobile apps". The closest role is found by meaning, not exact words. If the match is weak, it says so and points you to the dropdown instead of faking confidence.</li>
+          <li><b>The model rates six categories.</b>Format, university, experience, skills, clarity and red flags, each scored 1 to 10 with a specific comment.</li>
+          <li><b>Code computes the overall score.</b>A fixed weighting turns the six scores into one number. The model never gives the headline score.</li>
+        </ol>
+        <div class="example">
+          <header>Example: how the overall score is computed</header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Category</th><th>Weight</th><th>Score</th><th>Contribution</th></tr></thead>
+            <tbody>
+              <tr><td>Skills</td><td class="num">28%</td><td class="num">8</td><td class="num">2.24</td></tr>
+              <tr><td>Experience</td><td class="num">28%</td><td class="num">6</td><td class="num">1.68</td></tr>
+              <tr><td>University</td><td class="num">14%</td><td class="num">5</td><td class="num">0.70</td></tr>
+              <tr><td>Red flags</td><td class="num">14%</td><td class="num">7</td><td class="num">0.98</td></tr>
+              <tr><td>Clarity</td><td class="num">10%</td><td class="num">7</td><td class="num">0.70</td></tr>
+              <tr><td>Format</td><td class="num">6%</td><td class="num">8</td><td class="num">0.48</td></tr>
+              <tr><td>Overall</td><td></td><td></td><td class="num win">6.8</td></tr>
+            </tbody>
+          </table></div>
+          <p style="margin-top:12px;color:var(--muted)">These numbers are made up to show the mechanics. The same scores always produce the same total. Skills and experience carry 56% of it, and formatting carries 6%. That weighting is my judgment, not a validated figure.</p>
+        </div>
+
+        <h2>Design decisions</h2>
+        <h3>The model rates, code scores</h3>
+        <p>An LLM's own overall score drifts from run to run. A weighted average doesn't.</p>
+        <h3>Never trust the model's output</h3>
+        <p>The model is told to return raw JSON. The backend strips code fences if they appear, falls back to a pattern match to find the JSON, and returns a clear error if it still can't parse the reply.</p>
+        <h3>Reject bad uploads early</h3>
+        <p>A size cap and a check of the file's real signature, not just its extension, stop a mislabeled file from getting through. Empty and corrupted files return a clear error instead of crashing the server.</p>
+        <h3>Anchored scores</h3>
+        <p>The prompt defines what a 2, a 6 and a 9 mean to a hiring manager, so scores don't all cluster in the safe middle.</p>
+
+        <h2>Bugs I'm glad I hit</h2>
+
+        <h3>A July internship flagged as fake</h3>
+        <p>The model judged dates against its own stale sense of "now" and called a current-month internship future-dated. The fix: pass today's date into every request and treat it as the only reference.</p>
+
+        <h3>OCR worked locally and died in production</h3>
+        <p>I had hardcoded Windows paths for Tesseract and Poppler. On the Linux host, every image upload failed. The fix: find both tools automatically, with a Windows fallback.</p>
+
+        <h3>Web verification that hit rate limits</h3>
+        <p>I tried letting Gemini search the web to verify universities and employers. It hit quota errors after a couple of requests, so I reverted to plain generation.</p>
+
+        <h2>Where it stands</h2>
+        <p>Live and tested end to end. It runs on free tiers, which is why the backend sleeps when it isn't used. The ratings haven't been compared with real HR professionals yet. That is the next real test.</p>
+        <div class="status-board">
+          <div class="ok">Frontend<span>live</span></div>
+          <div class="ok">Backend<span>live</span></div>
+          <div class="ok">OCR pipeline<span>working</span></div>
+          <div class="ok">Upload validation<span>working</span></div>
+          <div class="wip">Always-on hosting<span>free tier</span></div>
+          <div class="no">Recruiter validation<span>not yet</span></div>
+          <div class="no">Accounts and history<span>not yet</span></div>
+          <div class="no">Batch ranking<span>not yet</span></div>
+          <div class="no">PDF report<span>not yet</span></div>
+        </div>
+        <h3>What's next</h3>
+        <p>Validate the ratings against real Pakistani recruiters. Then batch ranking for one role, a downloadable report, and accounts with history.</p>
+
+        <div class="proj-links" style="margin-top:36px">
+          <a class="btn primary" href="https://hire-lens-lime.vercel.app" target="_blank" rel="noopener">Visit the live site ↗</a>
+          <a class="btn" href="https://github.com/aadilkk18/HireLens" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="khimiyaar-ai.html">← KhimiYaar AI</a>
+        <a href="srms-dinenest.html">Next: SRMS / DineNest →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

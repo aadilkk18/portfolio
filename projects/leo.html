@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEO | Aadil Kamal Khan</title>
+<meta name="description" content="LEO is a personal AI assistant that runs fully offline on an 8GB laptop with no GPU, and answers Khowar questions from a database it was taught, never from the model.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="LEO | Aadil Kamal Khan">
+<meta property="og:description" content="A locally-run AI assistant with Khowar language memory. Every Khowar word it says comes from a database, never from the model.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / LEO</p>
+      <div class="cs-head">
+        <span class="logo-tile dark"><img src="../assets/img/projects/leo.png" alt="LEO logo"></span>
+        <h1>LEO</h1>
+        <span class="pill paused"><i aria-hidden="true"></i>Paused · core complete</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">Locally-run AI assistant with Khowar language memory</p>
+      <p class="lede cs-lede">A personal AI assistant that runs on my laptop, offline and at zero cost. It learns Khowar from me, and it never makes up a word.</p>
+      <div class="proj-links">
+        <a class="btn primary sm" href="https://lnkd.in/p/d3C5pxTR" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+        <a class="btn sm" href="https://github.com/aadilkk18/leo" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div><b>Role</b><span>Sole developer: app, backend, memory and voice</span></div>
+      <div><b>Status</b><span>Core complete, paused</span></div>
+      <div><b>Stack</b><span>Tauri, React, Python, FastAPI, SQLite, Ollama (Qwen2.5), faster-whisper</span></div>
+      <div><b>Constraint</b><span>8GB RAM, no GPU, fully offline</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <h2 style="margin-top:0">What LEO is</h2>
+        <p>LEO is a personal assistant I built end to end: a native Windows desktop app, a local language model, persistent memory and voice input. It runs on my own laptop with 8GB of RAM and no GPU, with no cloud service behind it. The name is a tribute to Lionel Messi.</p>
+
+        <h2>The problem</h2>
+        <p>Khowar is my first language, spoken in Chitral. No mainstream AI model has real Khowar training data. Ask one for a translation and it doesn't decline. It invents a word and states it as confidently as a real one.</p>
+        <p>I watched LEO's model do exactly that. When I told it the word was wrong, it kept defending it. A line in the prompt telling it not to wasn't enough.</p>
+        <div class="callout"><b>The one rule</b><p>The model talks. It never supplies Khowar. Every Khowar word LEO says comes from a database entry that I taught it.</p></div>
+
+        <h2>How it works, with a real example</h2>
+        <p>The model understands the sentence. The database supplies the Khowar. Here is the loop:</p>
+        <ol class="steps">
+          <li><b>I teach it by talking.</b>I type "how are you is kicha asus in khowar". There is no form and no fixed format.</li>
+          <li><b>It confirms before saving.</b>LEO says what it understood and asks yes or no. Nothing reaches the database until I confirm.</li>
+          <li><b>I ask it back, in either direction.</b>"How do I say how are you in Khowar?" or "What does kicha asus mean?" The answer is read from the saved entry and placed in the reply by ordinary code, not by the model.</li>
+        </ol>
+        <div class="example">
+          <header>Example: a word it was never taught</header>
+          <p>If I ask for a word that isn't in the database, LEO says it doesn't know it and offers to learn it. It doesn't guess. It asks.</p>
+        </div>
+        <p>Each phrase can carry several Khowar versions, tagged by register: formal, casual, or for speaking to elders. I can correct or delete an entry from inside the conversation.</p>
+
+        <h3>Safeguards on the teaching step</h3>
+        <ul>
+          <li><strong>Grounding check.</strong> Both the English and the Khowar must actually appear in the message I just typed. The model once invented content I never wrote.</li>
+          <li><strong>Self-reference rejection.</strong> An entry that maps a word to itself is dropped.</li>
+          <li><strong>Current message only.</strong> A new entry has to come from the message I just sent, not from earlier in the chat.</li>
+          <li><strong>Ambiguity is surfaced.</strong> When two entries match a question almost equally well, LEO asks which one I meant.</li>
+        </ul>
+
+        <h3>The order of checks</h3>
+        <p>Every message goes through the cheap, certain checks first: direct questions the database can answer, a pending yes/no confirmation, a close match to a taught entry, then list paging. The model only gets what is left over. Early versions let the model route every message, and it misread casual phrasing.</p>
+
+        <h3>Memory</h3>
+        <p>Conversations are kept for about 30 days. Before they expire, LEO pulls out the durable facts (my job, my projects, my situation) and keeps them permanently. Small talk is filtered out. A relevance check stops an old fact from hijacking an unrelated question. Mine kept dragging my internship into everything.</p>
+        <p>It also takes voice input, transcribed locally, with a correction pass tuned for Pakistani-accented English.</p>
+
+        <h2>Bugs I'm glad I hit</h2>
+
+        <h3>The invented word</h3>
+        <p>The model fabricated a Khowar word and defended it under correction. The fix was to take the model out of Khowar entirely.</p>
+
+        <h3>The old message that came back</h3>
+        <p>An unrelated later message was read as continuing an earlier teach or delete action. The fix: a new entry must be justified by the message just sent.</p>
+
+        <h3>A request that matched the wrong word</h3>
+        <p>Filler like "khowar" or "tell me" matched a short taught word purely on text similarity. Those words are now ignored when matching.</p>
+
+        <h2>Decisions I made</h2>
+        <ul>
+          <li><strong>The model never supplies Khowar.</strong> This is enforced in code, not requested in a prompt.</li>
+          <li><strong>Local only.</strong> Small models on modest hardware, with no cloud fallback.</li>
+          <li><strong>Phrases before words.</strong> Composing new Khowar sentences needs real grammar knowledge, and a naive version would sound right and be wrong.</li>
+          <li><strong>One user, one machine.</strong> It's my tool, not a product.</li>
+        </ul>
+
+        <h2>Where it stands</h2>
+        <p>Paused for now. The core works. Finishing the rest needs more computing power and more people than I have.</p>
+        <div class="status-board">
+          <div class="ok">Chat and threads<span>built</span></div>
+          <div class="ok">Memory<span>built</span></div>
+          <div class="ok">Khowar teaching<span>built</span></div>
+          <div class="ok">Voice input<span>built</span></div>
+          <div class="no">Quiz mode<span>not started</span></div>
+          <div class="no">Word-level vocabulary<span>not started</span></div>
+          <div class="no">Web search<span>not started</span></div>
+        </div>
+        <h3>What's next</h3>
+        <p>A quiz mode that tests me on what I've taught it, with confidence scores that rise as entries are used correctly. After that, word-level vocabulary, once it can be done without letting the model fake grammar.</p>
+
+        <div class="proj-links" style="margin-top:36px">
+          <a class="btn primary" href="https://lnkd.in/p/d3C5pxTR" target="_blank" rel="noopener">Watch the walkthrough ↗</a>
+          <a class="btn" href="https://github.com/aadilkk18/leo" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="spinzar-gems.html">← Spinzar Gems Co.</a>
+        <a href="khimiyaar-ai.html">Next: KhimiYaar AI →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

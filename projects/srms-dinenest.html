@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRMS / DineNest | Aadil Kamal Khan</title>
+<meta name="description" content="DineNest is a multi-tenant restaurant management system: one installation runs many restaurants, each with its own menu, staff, orders and finances, and none can see the others' data. A final year project.">
+<meta name="theme-color" content="#080b0e">
+<meta property="og:title" content="SRMS / DineNest | Aadil Kamal Khan">
+<meta property="og:description" content="A multi-tenant restaurant management system built as a final year project: orders, inventory, suppliers, staff, reports and an audit trail.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
+      <img class="wm on-dark" src="../assets/img/logo-dark.svg" alt="" width="104" height="22">
+      <img class="wm on-light" src="../assets/img/logo-light.svg" alt="" width="104" height="22">
+      <img class="mark on-dark" src="../assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
+      <img class="mark on-light" src="../assets/img/logo-mark-light.svg" alt="" width="30" height="30">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../education.html">Education</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head" style="padding-bottom:8px">
+      <p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Projects</a> / SRMS / DineNest</p>
+      <div class="cs-head">
+        <span class="logo-tile light letter" aria-hidden="true">S</span>
+        <h1>SRMS / DineNest</h1>
+        <span class="pill done"><i aria-hidden="true">✓</i>Complete</span>
+      </div>
+      <p class="kicker" style="margin-top:6px">Multi-tenant restaurant management system · Final year project</p>
+      <p class="lede cs-lede">One installation that runs many restaurants. Each has its own menu, staff, orders and money, and none of them can see the others.</p>
+    </div>
+
+    <div class="summary">
+      <div><b>Team</b><span>Aadil Kamal Khan, Azhar Ali Saleh and Madeeha Yousuf</span></div>
+      <div><b>Status</b><span>Complete</span></div>
+      <div><b>Stack</b><span>Laravel 12, MySQL, Tailwind CSS, Alpine.js</span></div>
+      <div><b>Scope</b><span>Orders, inventory, suppliers, staff, reports</span></div>
+    </div>
+  </div>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="cs-block">
+
+        <h2 style="margin-top:0">The brief</h2>
+        <p>A restaurant runs on a dozen things at once: the menu, the tables, the kitchen, the suppliers, the cash. DineNest puts all of it in one system. It is also built so a single installation can serve many restaurants without ever mixing their data.</p>
+        <p>It was our final year project, built by the three of us.</p>
+
+        <h2>How multi-tenancy works, with an example</h2>
+        <ol class="steps">
+          <li><b>One account, many restaurants.</b>A user can belong to several restaurants.</li>
+          <li><b>One is active at a time.</b>The active restaurant is kept in the user's session.</li>
+          <li><b>Every protected page checks it.</b>A check runs on every protected route, and every query is filtered by restaurant.</li>
+        </ol>
+        <div class="example">
+          <header>Example: a user with two restaurants</header>
+          <p>Switch from Restaurant A to Restaurant B and the menu, orders, staff and finances all change with it. Neither restaurant ever sees the other's records.</p>
+        </div>
+
+        <h2>A day in the restaurant</h2>
+        <ul>
+          <li><strong>Taking an order.</strong> Dine-in, takeaway or delivery, with a table and a waiter assigned.</li>
+          <li><strong>Paying.</strong> Cash, card or digital, with the change calculated.</li>
+          <li><strong>Following it.</strong> A stepper on the order page shows Pending, Preparing, Ready and Completed. Cancelled orders get their own marker instead.</li>
+          <li><strong>Printing.</strong> Receipts go to a thermal printer, with a customer copy and a kitchen copy.</li>
+          <li><strong>Stock.</strong> Each item has a low-stock threshold, and the dashboard shows an alert listing what is running out.</li>
+        </ul>
+
+        <h2>Behind the counter</h2>
+        <p>Suppliers, purchases and the payments against them. Expenses by category. Reports for finance, purchases, orders, customers and items, each downloadable as PDF or CSV and respecting the filters on screen. A dashboard shows revenue, orders and customers, the best seller of the week, and 7-day and 6-month charts.</p>
+
+        <h2>Who can do what</h2>
+        <p>There are two default roles, Super Admin and Admin, with fine-grained permissions such as "create orders" or "delete purchases". They are hidden in the interface and also enforced on the server. Every significant action goes into an activity log, so there is a trail of who did what and when.</p>
+
+        <h2>Bugs we're glad we hit</h2>
+
+        <h3>A price showing as 28.979999999999997</h3>
+        <p>A JavaScript rounding artifact in the payment window. We fixed it by rounding the value for display.</p>
+
+        <h3>A Super Admin with a fraction of the permissions</h3>
+        <p>Two seeder lists were silently cut short, so the top role could do far less than intended, and nothing showed an error.</p>
+
+        <h3>Exports that crashed</h3>
+        <p>The activity-logging middleware called a method that some response types don't have. We replaced it with one that every response supports.</p>
+
+        <h2>Where it stands</h2>
+        <div class="status-board">
+          <div class="ok">Restaurant switching<span>built</span></div>
+          <div class="ok">Orders and payments<span>built</span></div>
+          <div class="ok">Receipt printing<span>built</span></div>
+          <div class="ok">Inventory alerts<span>built</span></div>
+          <div class="ok">Suppliers and purchases<span>built</span></div>
+          <div class="ok">Reports, PDF and CSV<span>built</span></div>
+          <div class="ok">Roles and audit log<span>built</span></div>
+          <div class="no">Automatic stock deduction<span>manual</span></div>
+          <div class="wip">Dark mode<span>shell only</span></div>
+          <div class="no">Real Excel export<span>CSV only</span></div>
+          <div class="no">QR table ordering<span>not built</span></div>
+        </div>
+        <h3>What's next</h3>
+        <p>Customers ordering from a QR code at the table, stock that deducts itself when an order is placed, dark mode on every page, and real Excel export.</p>
+      </div>
+
+      <div class="pager">
+        <a href="hirelens.html">← HireLens</a>
+        <a href="index.html">All projects →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Aadil Kamal Khan · Peshawar, Pakistan</span>
+    <nav aria-label="Social links">
+      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
