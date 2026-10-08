@@ -4,7 +4,7 @@
    Design notes: serif display type + mono labels, one teal accent,
    layered surfaces, paper grain, a faint blueprint grid behind the hero.
    ========================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap');
+
 
 :root{
   --bg:#080b0e; --surface:#10141a; --surface-2:#171c23; --line:#242b34; --line-strong:#323b47;
@@ -16,7 +16,7 @@
   --shadow:0 0 0 0 transparent; --shadow-lg:0 18px 50px -24px rgba(94,234,212,.35);
   --radius:14px; --maxw:1120px;
   --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --display:'Inter Tight','Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --display:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   color-scheme:dark;
 }
@@ -24,8 +24,8 @@
 :root[data-theme="light"]{
   --bg:#f4efe3; --surface:#fffcf5; --surface-2:#ece6d6; --line:#d9d1bd; --line-strong:#c2b99f;
   --text:#16191b; --muted:#53585c; --accent:#0b6b62; --accent-ink:#ffffff;
-  --warn:#8a5d00;
-  --live:#15803d; --dev:#8a5d00; --done:#0b6b62; --pause:#4338ca;
+  --warn:#7a5200;
+  --live:#166534; --dev:#7a5200; --done:#0b6b62; --pause:#4338ca;
   --glow-1:rgba(11,107,98,.16); --glow-2:rgba(217,140,40,.20);
   --grid:rgba(22,25,27,.055); --grain:.09;
   --shadow:0 1px 1px rgba(60,45,10,.05),0 2px 4px rgba(60,45,10,.04),0 14px 30px -18px rgba(60,45,10,.30);
@@ -37,7 +37,7 @@
 html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 main{flex:1;position:relative;isolation:isolate}
-img,iframe{max-width:100%}
+img,iframe{max-width:100%}img{height:auto}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--accent);color:var(--accent-ink)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -67,7 +67,7 @@ main::after{content:"";position:absolute;inset:-96px 0 auto 0;height:760px;z-ind
 
 /* ---------- navigation: floating pill ---------- */
 .nav{position:sticky;top:12px;z-index:50;padding:0 12px;background:none;border:0}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;max-width:var(--maxw);padding:0 10px 0 22px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg) 68%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:var(--shadow)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;max-width:var(--maxw);padding:0 10px 0 22px;border:1px solid var(--line);border-radius:999px;background:var(--bg);background:color-mix(in srgb,var(--bg) 68%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:var(--shadow)}
 .logo{font-family:var(--mono);font-weight:500;font-size:15px}
 .logo span{color:var(--accent)}
 /* SpecOne logo: wordmark on desktop, ring mark alone on phones, dark/light version follows the theme */
@@ -100,7 +100,7 @@ main::after{content:"";position:absolute;inset:-96px 0 auto 0;height:760px;z-ind
 /* ---------- buttons, chips, tags ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--surface) 70%,transparent);color:var(--text);cursor:pointer;font-family:inherit;transition:transform .2s ease,border-color .2s,box-shadow .2s,background .2s}
 .btn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 26px -14px color-mix(in srgb,var(--accent) 70%,transparent)}
-.btn.primary{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 86%,#fff),var(--accent));color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 70%,#000);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 28px -12px color-mix(in srgb,var(--accent) 80%,transparent)}
+.btn.primary{background:var(--accent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 86%,#fff),var(--accent));color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 70%,#000);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 28px -12px color-mix(in srgb,var(--accent) 80%,transparent)}
 .btn.primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 16px 34px -12px color-mix(in srgb,var(--accent) 90%,transparent)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -140,7 +140,7 @@ section{padding:96px 0}
 /* ---------- project cards (home + projects overview, drawn by main.js from projects.js) ---------- */
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:22px}
 .grid3{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}  /* home: three cards in a row */
-.proj2{position:relative;display:flex;flex-direction:column;padding:28px;border-radius:24px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 82%,var(--bg)));border:1px solid var(--line);overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--text) 7%,transparent),var(--shadow)}
+.proj2{position:relative;display:flex;flex-direction:column;padding:28px;border-radius:24px;background:var(--surface);background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 82%,var(--bg)));border:1px solid var(--line);overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--text) 7%,transparent),var(--shadow)}
 /* spotlight: soft glow that follows the cursor (position set by main.js) */
 .proj2::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s ease;background:radial-gradient(460px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 17%,transparent),transparent 62%)}
 /* gradient hairline that lights up on hover */
@@ -193,7 +193,7 @@ section{padding:96px 0}
 
 /* ---------- skills with receipts (home) ---------- */
 .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:20px}
-.cap{position:relative;display:flex;flex-direction:column;padding:28px;border-radius:22px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 84%,var(--bg)));border:1px solid var(--line);overflow:hidden;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--text) 7%,transparent),var(--shadow);transition:border-color .3s ease,box-shadow .35s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
+.cap{position:relative;display:flex;flex-direction:column;padding:28px;border-radius:22px;background:var(--surface);background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 84%,var(--bg)));border:1px solid var(--line);overflow:hidden;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--text) 7%,transparent),var(--shadow);transition:border-color .3s ease,box-shadow .35s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
 .cap::before{content:"";position:absolute;right:-30px;top:-30px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,transparent),transparent 68%);opacity:.0;transition:opacity .4s ease}
 .cap:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:inset 0 1px 0 color-mix(in srgb,var(--text) 7%,transparent),var(--shadow-lg)}
 .cap:hover::before{opacity:1}
