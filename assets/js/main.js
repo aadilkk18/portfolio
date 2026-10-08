@@ -118,11 +118,17 @@
     if (!window.matchMedia('(hover:hover)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
     document.querySelectorAll('.proj2').forEach(function (cardEl) {
+      var frame = 0, px = 0, py = 0;
       cardEl.addEventListener('pointermove', function (e) {
-        var r = cardEl.getBoundingClientRect();
-        cardEl.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        cardEl.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
+        px = e.clientX; py = e.clientY;
+        if (frame) return;                       /* at most one update per frame */
+        frame = requestAnimationFrame(function () {
+          frame = 0;
+          var r = cardEl.getBoundingClientRect();
+          cardEl.style.setProperty('--mx', (px - r.left) + 'px');
+          cardEl.style.setProperty('--my', (py - r.top) + 'px');
+        });
+      }, { passive: true });
     });
   }
 

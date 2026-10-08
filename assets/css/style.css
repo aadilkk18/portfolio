@@ -127,8 +127,9 @@ section{padding:96px 0}
 /* ---------- home hero ---------- */
 .hero{padding:104px 0 80px}
 .status{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 16px;background:color-mix(in srgb,var(--surface) 75%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.dot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+@keyframes ping{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(2.6);opacity:0}}
+.dot::after,.pill.live i::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--ping,var(--accent));animation:ping 2.4s ease-out infinite;pointer-events:none}
 .hero h1{margin:28px 0 14px;max-width:14ch}
 .role-line{font-family:var(--mono);font-size:14px;color:var(--accent);margin-bottom:26px;letter-spacing:.01em}
 .hero .lede{margin-top:0}
@@ -170,7 +171,7 @@ section{padding:96px 0}
 .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;padding:5px 13px;border-radius:999px;white-space:nowrap;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,var(--line));background:color-mix(in srgb,var(--c) 9%,transparent)}
 .pill i{flex-shrink:0;width:7px;height:7px;border-radius:50%;background:var(--c);font-style:normal}
 .pill.live{--c:var(--live)}
-.pill.live i{box-shadow:0 0 0 0 var(--c);animation:pulse 2.4s infinite}
+.pill.live i{position:relative;--ping:var(--c)}
 .pill.dev{--c:var(--dev)}
 .pill.dev i{width:9px;height:9px;background:conic-gradient(var(--c) 0 62%,transparent 0);border:1px solid var(--c);animation:spin 3.2s linear infinite}
 .pill.done{--c:var(--done)}
@@ -182,8 +183,8 @@ section{padding:96px 0}
 /* staggered entrance: the animation only fills backwards, so hover transforms still work afterwards */
 .proj2.reveal{opacity:1;transform:none}
 .proj2.reveal:not(.in){opacity:0}
-.proj2.reveal.in{animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0) * 90ms)}
-@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.proj2.reveal.in{animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0) * 50ms)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(hover:none){.proj2::before,.proj2::after{display:none}}
 .no-js .proj2.reveal:not(.in){opacity:1}
 
@@ -346,7 +347,7 @@ ul.plain li small{display:block;color:var(--muted);font-size:13px}
 .foot a:hover{color:var(--accent)}
 
 /* ---------- scroll reveal ---------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 .no-js .reveal{opacity:1;transform:none}
 .proj2.reveal{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease}
@@ -366,7 +367,7 @@ ul.plain li small{display:block;color:var(--muted);font-size:13px}
   html{scroll-behavior:auto}
   html::before{display:none}
   .reveal{opacity:1;transform:none;transition:none}
-  .dot{animation:none}
+  .dot::after,.pill.live i::after{animation:none;opacity:0}
   .btn:hover,.proj:hover,.cap:hover,.icon-btn:hover,.contact-list a:hover{transform:none}
   .proj2.reveal.in{animation:none}
   .proj2.reveal:hover,.proj2.reveal:focus-visible{transform:none}
@@ -436,13 +437,13 @@ html{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--text) 24%,tran
 
 @media(prefers-reduced-motion:no-preference){
   /* page and hero entrance */
-  .hero>*,.page-head>*,.cs-head{animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards}
-  .hero>:nth-child(2),.page-head>:nth-child(2){animation-delay:.06s}
-  .hero>:nth-child(3),.page-head>:nth-child(3){animation-delay:.12s}
-  .hero>:nth-child(4),.page-head>:nth-child(4){animation-delay:.18s}
-  .hero>:nth-child(5){animation-delay:.24s}
-  .hero>:nth-child(6){animation-delay:.3s}
-  .hero>:nth-child(7){animation-delay:.36s}
+  .hero>*,.page-head>*,.cs-head{animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards}
+  .hero>:nth-child(2),.page-head>:nth-child(2){animation-delay:.05s}
+  .hero>:nth-child(3),.page-head>:nth-child(3){animation-delay:.1s}
+  .hero>:nth-child(4),.page-head>:nth-child(4){animation-delay:.15s}
+  .hero>:nth-child(5){animation-delay:.2s}
+  .hero>:nth-child(6){animation-delay:.25s}
+  .hero>:nth-child(7){animation-delay:.3s}
   .hero::before{animation:ringIn 1.4s cubic-bezier(.2,.7,.2,1) backwards .15s}
   .hero::after{animation:orbit 22s linear infinite}
   @keyframes ringIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:none}}
@@ -451,9 +452,9 @@ html{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--text) 24%,tran
   /* skill cards arrive one after another */
   .cap.reveal{opacity:1;transform:none}
   .cap.reveal:not(.in){opacity:0}
-  .cap.reveal.in{animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards}
-  .caps>.cap:nth-child(3n+2).in{animation-delay:.09s}
-  .caps>.cap:nth-child(3n+3).in{animation-delay:.18s}
+  .cap.reveal.in{animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards}
+  .caps>.cap:nth-child(3n+2).in{animation-delay:.05s}
+  .caps>.cap:nth-child(3n+3).in{animation-delay:.1s}
 
   /* smooth fade between pages in browsers that support it */
   @view-transition{navigation:auto}
