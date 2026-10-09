@@ -9,7 +9,7 @@
 :root{
   --bg:#080b0e; --surface:#10141a; --surface-2:#171c23; --line:#242b34; --line-strong:#323b47;
   --text:#eef1f4; --muted:#9ba5b0; --accent:#5eead4; --accent-ink:#04211d;
-  --warn:#f5c26b;
+  --warn:#f5c26b; --accent-2:#a5b4fc; --accent-warm:#f5c26b;
   --live:#4ade80; --dev:#f5c26b; --done:#5eead4; --pause:#a5b4fc;
   --glow-1:rgba(94,234,212,.13); --glow-2:rgba(129,140,248,.10);
   --grid:rgba(255,255,255,.035); --grain:.07;
@@ -23,9 +23,9 @@
 /* light theme = warm paper and ink, not white-on-white */
 :root[data-theme="light"]{
   --bg:#f4efe3; --surface:#fffcf5; --surface-2:#ece6d6; --line:#d9d1bd; --line-strong:#c2b99f;
-  --text:#16191b; --muted:#53585c; --accent:#0b6b62; --accent-ink:#ffffff;
-  --warn:#7a5200;
-  --live:#166534; --dev:#7a5200; --done:#0b6b62; --pause:#4338ca;
+  --text:#16191b; --muted:#53585c; --accent:#0a5f57; --accent-ink:#ffffff;
+  --warn:#7a5200; --accent-2:#4338ca; --accent-warm:#7a5200;
+  --live:#166534; --dev:#7a5200; --done:#0a5f57; --pause:#4338ca;
   --glow-1:rgba(11,107,98,.16); --glow-2:rgba(217,140,40,.20);
   --grid:rgba(22,25,27,.055); --grain:.09;
   --shadow:0 1px 1px rgba(60,45,10,.05),0 2px 4px rgba(60,45,10,.04),0 14px 30px -18px rgba(60,45,10,.30);
@@ -115,6 +115,7 @@ main::after{content:"";position:absolute;inset:-96px 0 auto 0;height:760px;z-ind
 h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance}
 h1{font-size:clamp(40px,6.2vw,72px);line-height:1.05;letter-spacing:-.035em}
 h1 em{font-style:normal;color:var(--accent)}
+@supports (background-clip:text) or (-webkit-background-clip:text){h1 em{background:linear-gradient(100deg,var(--accent) 25%,var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}}
 h2{font-size:clamp(28px,3.8vw,40px);letter-spacing:-.028em;margin:14px 0 16px;line-height:1.12}
 h2 em{font-style:normal;color:var(--accent)}
 h3{letter-spacing:-.01em}
@@ -257,7 +258,7 @@ ul.plain li small{display:block;color:var(--muted);font-size:13px}
 
 /* ---------- project detail pages ---------- */
 .crumbs{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.crumbs a:hover{color:var(--accent)}
+.crumbs a:hover{color:var(--accent-warm)}
 .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:30px 0 8px}
 .summary div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
 .summary b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:4px}
@@ -344,7 +345,7 @@ ul.plain li small{display:block;color:var(--muted);font-size:13px}
 .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 .foot nav{display:flex;flex-wrap:wrap;gap:20px}
 .foot a{transition:color .2s}
-.foot a:hover{color:var(--accent)}
+.foot a:hover{color:var(--accent-warm)}
 
 /* ---------- scroll reveal ---------- */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
