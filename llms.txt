@@ -1,6 +1,6 @@
 # Aadil Kamal Khan
 
-> AI/ML engineer and full-stack developer from Chitral, Pakistan. Computer Science graduate (IMSciences Peshawar, 2026). Builds AI products end to end under the name SpecOne. Core idea: guarantees live in code, not in a prompt.
+> AI/ML engineer and full-stack developer from Chitral, Pakistan. Computer Science graduate (IMSciences Peshawar, 2026). Builds AI products end to end under the name SpecOne, from backend and models to web and Android. Core idea: guarantees live in code, not in a prompt.
 
 Contact: adilkamalkhan3@gmail.com. LinkedIn: https://www.linkedin.com/in/aadil-kamal-khan-ai. GitHub: https://github.com/aadilkk18.
 
@@ -12,6 +12,9 @@ Contact: adilkamalkhan3@gmail.com. LinkedIn: https://www.linkedin.com/in/aadil-k
 - [HireLens](https://aadilkk18.github.io/portfolio/work/hirelens.html): CV rating platform tuned to Pakistani hiring, hybrid OCR, semantic matching across 115+ roles.
 - [SRMS / DineNest](https://aadilkk18.github.io/portfolio/work/srms-dinenest.html): multi-tenant restaurant management system, final year project, team of three.
 - [Mirror](https://aadilkk18.github.io/portfolio/work/mirror.html): offline Android game with an opponent that learns how you choose; hand-written learning engine, no ML library. Nearly finished.
+
+## Skills
+Python, TypeScript, JavaScript, SQL. FastAPI, Node.js, PostgreSQL, SQLite. React, Next.js, Vite, Tailwind CSS, Tauri, Capacitor for Android. Gemini and Groq APIs, Ollama, TensorFlow, scikit-learn, Tesseract OCR. Methods: MCDA, Monte Carlo simulation, SMAA, online logistic regression, mixture of experts, CUSUM, proper scoring rules. Deployment: Docker, Railway, Cloudflare, Vercel, Hugging Face Spaces.
 
 ## About
 - [About](https://aadilkk18.github.io/portfolio/about.html)

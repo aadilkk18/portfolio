@@ -374,3 +374,11 @@ img,svg{display:block;max-width:100%}
 .pg>.cs-h1{font-size:clamp(40px,6vw,80px);line-height:.95}
 .pg-sec>h2{font-size:clamp(26px,3vw,38px)}
 @media (max-width:600px){.pg>.cs-h1{font-size:clamp(36px,11vw,56px)}}
+
+/* four stats */
+@media (min-width:901px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat{padding:36px 24px 38px 0}.stat+.stat{padding-left:24px}
+  .stat b{font-size:clamp(46px,4.6vw,62px)}
+  .stat span{font-size:16px;max-width:24ch}
+}
