@@ -1,84 +1,65 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.write('<base href="'+(/\.github\.io$/.test(location.hostname)?'/portfolio/':'/')+'">');</script>
 <noscript><base href="/portfolio/"></noscript>
-<title>Page not found | Aadil Kamal Khan</title>
-<meta name="description" content="This page does not exist. Head back to the home page or the projects.">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#080b0e">
-<meta property="og:title" content="Page not found | Aadil Kamal Khan">
-<meta property="og:description" content="This page does not exist.">
-<meta property="og:type" content="website">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/img/favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('portfolio-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body data-root="">
-<a class="skip" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');m.setAttribute('tabindex','-1');m.focus()">Skip to content</a>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="SpecOne, Aadil Kamal Khan, home">
-      <img class="wm on-dark" src="assets/img/logo-dark.svg" alt="" width="104" height="22">
-      <img class="wm on-light" src="assets/img/logo-light.svg" alt="" width="104" height="22">
-      <img class="mark on-dark" src="assets/img/logo-mark-dark.svg" alt="" width="30" height="30">
-      <img class="mark on-light" src="assets/img/logo-mark-light.svg" alt="" width="30" height="30">
-    </a>
-    <nav aria-label="Primary">
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects/index.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Aadil Kamal Khan</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="design.css">
+<script>
+(function(){var m='dark';try{m=localStorage.getItem('theme')==='light'?'light':'dark'}catch(e){}
+document.documentElement.dataset.theme=m;document.documentElement.dataset.mode=m;})();
+</script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="index.html" aria-label="SpecOne, Aadil Kamal Khan, home"><img class="on-light" src="assets/img/logo-light.svg" alt="" width="104" height="22"><img class="on-dark" src="assets/img/logo-dark.svg" alt="" width="104" height="22"><span class="brand__name">Aadil Kamal Khan</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a><a href="work.html">Work</a><a href="experience.html">Experience</a><a href="education.html">Education</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     </nav>
-    <div class="nav-tools">
-      <button class="icon-btn" id="theme" aria-label="Switch between light and dark theme">◐</button>
-      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <div class="hdr__act">
+      <a class="btn btn--line btn--sm" href="my_cv.pdf">CV</a>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Colour theme"><svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
     </div>
   </div>
 </header>
 
-<main id="main">
-  <div class="wrap">
-    <div class="page-head" style="padding-bottom:72px">
-      <p class="eyebrow">404</p>
-      <p aria-hidden="true" style="font-family:var(--display);font-weight:600;font-size:clamp(88px,18vw,180px);line-height:1;letter-spacing:-.04em;color:var(--accent);margin:8px 0 0">404</p>
-      <h1>This page doesn't exist.</h1>
-      <p class="lede">I checked twice. Either the link is wrong, or I moved something and forgot to tell you.</p>
-      <p class="lede" style="margin-top:12px">Everything that does exist is one click away.</p>
-      <div class="proj-links" style="margin-top:28px">
-        <a class="btn primary" href="index.html">Go home</a>
-        <a class="btn" href="projects/index.html">See my projects</a>
-        <a class="btn" href="contact.html">Get in touch</a>
-      </div>
-      <p style="margin-top:28px;font-size:14px;color:var(--muted)">Found a broken link? Tell me. I'd rather fix it than not know.</p>
-    </div>
+<main class="wrap pg">
+  <p class="xp__when" style="padding:0">404</p>
+  <h1 class="cs-h1" style="margin-top:10px">This page doesn't exist.</h1>
+  <p class="cs-lede">I checked twice. Either the link is wrong, or I moved something and forgot to tell you.</p>
+  <div class="btnrow">
+    <a class="btn btn--solid" href="index.html">Go home</a>
+    <a class="btn" href="work.html">See my work</a>
+    <a class="textlink" href="contact.html">Get in touch</a>
   </div>
+  <p class="ab-p" style="margin-top:40px">Found a broken link? Tell me. I would rather fix it than not know.</p>
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <span>© <span id="year">2026</span> SpecOne · Aadil Kamal Khan</span>
-    <nav aria-label="Social links">
-      <a href="mailto:adilkamalkhan3@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/aadil-kamal-khan-ai" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/aadilkk18" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+<footer class="ftr" style="margin-top:96px">
+  <div class="wrap ftr__in">
+    <span>&copy; 2026 SpecOne &middot; Aadil Kamal Khan</span>
+    <nav aria-label="Elsewhere"><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/aadil-kamal-khan-ai">LinkedIn</a><a href="https://github.com/aadilkk18">GitHub</a></nav>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('theme-toggle'),root=document.documentElement;
+  function apply(m){root.dataset.mode=m;root.dataset.theme=m;
+    b.setAttribute('aria-label','Colour theme: '+m+'. Activate to switch to '+(m==='dark'?'light':'dark')+'.');b.title='Theme: '+m;}
+  b.addEventListener('click',function(){var m=root.dataset.theme==='dark'?'light':'dark';
+    try{localStorage.setItem('theme',m)}catch(e){} apply(m);});
+  apply(root.dataset.theme==='light'?'light':'dark');
+})();
+</script>
 </body>
 </html>

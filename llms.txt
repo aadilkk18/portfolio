@@ -1,0 +1,20 @@
+# Aadil Kamal Khan
+
+> AI/ML engineer and full-stack developer from Chitral, Pakistan. Computer Science graduate (IMSciences Peshawar, 2026). Builds AI products end to end under the name SpecOne. Core idea: guarantees live in code, not in a prompt.
+
+Contact: adilkamalkhan3@gmail.com. LinkedIn: https://www.linkedin.com/in/aadil-kamal-khan-ai. GitHub: https://github.com/aadilkk18.
+
+## Projects
+- [Kairos](https://aadilkk18.github.io/portfolio/work/kairos.html): AI decision-intelligence platform in development. A quantitative engine computes every number; the language model only explains results.
+- [Spinzar Gems Co.](https://aadilkk18.github.io/portfolio/work/spinzar.html): luxury gemstone showcase and inquiry platform for a client, built solo, live.
+- [LEO](https://aadilkk18.github.io/portfolio/work/leo.html): offline personal AI assistant with Khowar language memory, runs on 8GB RAM with no GPU. Core complete, paused.
+- [KhimiYaar AI](https://aadilkk18.github.io/portfolio/work/khimiyaar.html): health information chatbot with a lab report analyzer, emergency detection and an X-ray fracture model.
+- [HireLens](https://aadilkk18.github.io/portfolio/work/hirelens.html): CV rating platform tuned to Pakistani hiring, hybrid OCR, semantic matching across 115+ roles.
+- [SRMS / DineNest](https://aadilkk18.github.io/portfolio/work/srms-dinenest.html): multi-tenant restaurant management system, final year project, team of three.
+- [Mirror](https://aadilkk18.github.io/portfolio/work/mirror.html): offline Android game with an opponent that learns how you choose; hand-written learning engine, no ML library. Nearly finished.
+
+## About
+- [About](https://aadilkk18.github.io/portfolio/about.html)
+- [Experience](https://aadilkk18.github.io/portfolio/experience.html)
+- [Education](https://aadilkk18.github.io/portfolio/education.html)
+- [Contact](https://aadilkk18.github.io/portfolio/contact.html)
